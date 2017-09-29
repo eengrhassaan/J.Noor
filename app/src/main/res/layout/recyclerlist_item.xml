@@ -5,20 +5,27 @@
     android:id="@+id/cardlist_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card:cardCornerRadius="4dp"
+    card:cardCornerRadius="2dp"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp">
-
-    <TextView
-        android:id="@+id/listitem_name"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/listPreferredItemHeight"
-        android:text="Android version name"
-        android:textColor="@color/primary_text_default_material_light"
-        android:textSize="@dimen/abc_text_size_subhead_material"/>
-
-
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_jkitchen"
+            android:id="@+id/img1"/>
+        <TextView
+            android:id="@+id/listitem_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android version name"
+            android:textColor="@color/primary_text_default_material_light"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:layout_below="@id/img1"/>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -79,9 +80,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager){
+        List<String> datas = VersionModel.data;
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new CoordinatorFragment(), "Coordinator Layout");
         adapter.addFrag(new Todays_Meal(),"Today's Meal");
+//        adapter.addFrag(new , "CardView Sample");
         viewPager.setAdapter(adapter);
     }
 

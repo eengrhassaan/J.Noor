@@ -24,12 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by rufflez on 6/21/15.
- */
 public class CoordinatorFragment extends Fragment {
     RecyclerView recyclerView;
 
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.coordinator_layout, container, false);

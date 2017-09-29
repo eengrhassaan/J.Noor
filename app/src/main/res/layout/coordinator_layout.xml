@@ -21,27 +21,4 @@
         android:src="@drawable/ic_backup_white_48dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"/>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_callus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Call Us!"
-            android:textColor="@color/white"
-            android:drawableLeft="@android:drawable/ic_menu_call"
-            />
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_sendsms"
-            android:layout_toRightOf="@id/btn_callus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SMS"
-            android:textColor="@color/white"
-            android:drawableLeft="@android:drawable/ic_dialog_email"/>
-    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
