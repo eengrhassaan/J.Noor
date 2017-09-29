@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="primary">#81b4e1</color>
+
+
+    <color name="primary">#81b4e1</color>
+    <color name="primaryDark">#4f84af</color>
+    <!--<color name="window_background">#00FFFFFF</color>-->
+  <color name="window_background">#FF4081</color>
+  <!--<color name="primary">#81b4e1</color>-->
   <color name="primary_dark">#4f84af</color>
   <color name="primary_darker">#4f84af</color>
   <color name="primary_darker1">#16577f</color>
@@ -15,4 +21,11 @@
   <color name="base">#AAAAAA</color>
   <color name="iron">#CCCCCC</color>
   <color name="white">#FFFFFF</color>
+
+
+  <color name="primaryColor1">#2196F3</color>
+  <color name="primaryColorDark1">#1976D2</color>
+  <color name="colorAccent1">#FF4081</color>
+  <color name="colorTextPrimary1">#212121</color>
+  <color name="colorTextSecondary1">#727272</color>
 </resources>

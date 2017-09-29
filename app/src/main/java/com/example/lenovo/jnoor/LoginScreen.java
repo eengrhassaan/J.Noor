@@ -37,7 +37,7 @@ public class LoginScreen extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent t = new Intent(getApplicationContext(),MainScreen.class);
+                Intent t = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(t);
 //                login();
             }
@@ -101,7 +101,7 @@ public class LoginScreen extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
+        // disable going back to the MainScreen
         moveTaskToBack(true);
     }
 
