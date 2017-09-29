@@ -5,11 +5,13 @@ package com.example.lenovo.jnoor;
  */
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -26,8 +28,8 @@ import java.util.Random;
 
 public class CoordinatorFragment extends Fragment {
     RecyclerView recyclerView;
+    TextView textView;
 
-    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.coordinator_layout, container, false);
@@ -37,9 +39,15 @@ public class CoordinatorFragment extends Fragment {
     }
 
     private void setupRecyclerView(RecyclerView recyclerView){
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                VersionModel.data));
+        List<String> datas = new ArrayList<String>();
+        for (int i=0;i<30;i++){
+            datas.add("Day: " + String.valueOf(i+1));
+        }
+        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(),2));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        recyclerView.setAdapter(new SimpleRecyclerAdapter(datas));
+//        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
+//                VersionModel.data));
     }
 
     public static class SimpleStringRecyclerViewAdapter extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder>{

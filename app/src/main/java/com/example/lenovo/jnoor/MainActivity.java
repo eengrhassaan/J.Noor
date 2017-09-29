@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager){
-        List<String> datas = VersionModel.data;
+
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new CoordinatorFragment(), "Coordinator Layout");
         adapter.addFrag(new Todays_Meal(),"Today's Meal");

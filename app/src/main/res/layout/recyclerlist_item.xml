@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:id="@+id/cardlist_item"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    card:cardCornerRadius="2dp"
+
     android:foreground="?android:attr/selectableItemBackground"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="6dp"
+
+    card_view:contentPadding="10p"
+    card:cardCornerRadius="5dp"
+    card:cardElevation="10dp"
+    card:contentPadding="10dp"
+    >
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginRight="8dp"-->
+    <!--android:layout_marginTop="5dp"
+
+    -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

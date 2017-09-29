@@ -29,7 +29,7 @@
         <!--Login Activity-->
         <activity android:name=".LoginScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" ></activity>
         <activity android:name=".RegisterScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
-        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.DesignDemo" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
