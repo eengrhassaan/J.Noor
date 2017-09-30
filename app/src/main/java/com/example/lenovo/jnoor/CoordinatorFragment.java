@@ -43,7 +43,7 @@ public class CoordinatorFragment extends Fragment {
         for (int i=0;i<30;i++){
             datas.add("Day: " + String.valueOf(i+1));
         }
-        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(),1));
         //recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleRecyclerAdapter(datas));
 //        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
