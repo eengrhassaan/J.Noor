@@ -43,7 +43,7 @@
 
 <!--</resources>-->
 <resources>
-    <style name="Theme.DesignDemo" parent="Base.Theme.DesignDemo">
+    <style name="Theme.DesignDemo" parent="AppBaseTheme">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>

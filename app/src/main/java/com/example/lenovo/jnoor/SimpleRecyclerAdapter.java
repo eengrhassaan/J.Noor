@@ -49,7 +49,7 @@ public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAd
 
         public VersionViewHolder(View itemView){
             super(itemView);
-            cardItemLayout = (CardView)itemView.findViewById(R.id.cardlist_item);
+            cardItemLayout = (CardView)itemView.findViewById(R.id.card_view);
             title = (TextView)itemView.findViewById(R.id.listitem_name);
         }
 

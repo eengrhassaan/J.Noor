@@ -28,4 +28,9 @@
   <color name="colorAccent1">#FF4081</color>
   <color name="colorTextPrimary1">#212121</color>
   <color name="colorTextSecondary1">#727272</color>
+
+
+  <color name="statusBarColor">@color/blue</color>
+  <color name="navigationBarColor">@android:color/black</color>
+  <color name="drawerArrowColor">@android:color/white</color>
 </resources>

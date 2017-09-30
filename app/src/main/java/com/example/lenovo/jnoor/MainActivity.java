@@ -1,180 +1,116 @@
 package com.example.lenovo.jnoor;
-
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
-
-import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.github.florent37.materialviewpager.MaterialViewPager;
+import com.github.florent37.materialviewpager.header.HeaderDesign;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DrawerActivity {
 
-    private DrawerLayout drawerLayout;
-    private ViewPager viewPager;
+    @BindView(R.id.materialViewPager)
+    MaterialViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("");
+        ButterKnife.bind(this);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.mToolbar);
-        setSupportActionBar(toolbar);
-
-        final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ab.setDisplayHomeAsUpEnabled(true);
-
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-
-        NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
-        if (navView != null){
-            setupDrawerContent(navView);
+        final Toolbar toolbar = mViewPager.getToolbar();
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
         }
 
-        viewPager = (ViewPager)findViewById(R.id.tab_viewpager);
-        if (viewPager != null){
-            setupViewPager(viewPager);
-        }
+        mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
-
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
-
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+            public Fragment getItem(int position) {
+                switch (position % 4) {
+                    //case 0:
+                    //    return RecyclerViewFragment.newInstance();
+                    //case 1:
+                    //    return RecyclerViewFragment.newInstance();
+                    //case 2:
+                    //    return WebViewFragment.newInstance();
+                    default:
+                        return RecyclerViewFragment.newInstance();
+                }
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
+            public int getCount() {
+                return 4;
             }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
+            public CharSequence getPageTitle(int position) {
+                switch (position % 4) {
+                    case 0:
+                        return "Selection";
+                    case 1:
+                        return "Actualités";
+                    case 2:
+                        return "Professionnel";
+                    case 3:
+                        return "Divertissement";
+                }
+                return "";
             }
         });
 
-    }
-
-    private void setupViewPager(ViewPager viewPager){
-
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new CoordinatorFragment(), "Coordinator Layout");
-        adapter.addFrag(new Todays_Meal(),"Today's Meal");
-//        adapter.addFrag(new , "CardView Sample");
-        viewPager.setAdapter(adapter);
-    }
-
-    private void setupDrawerContent(NavigationView navigationView){
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                menuItem.setChecked(true);
-
-                switch (menuItem.getItemId()) {
-                    case R.id.drawer_labels:
-                        viewPager.setCurrentItem(0);
-                        break;
-                    case R.id.drawer_fab:
-                        viewPager.setCurrentItem(1);
-                        break;
-                    case R.id.drawer_snackbar:
-                        viewPager.setCurrentItem(2);
-                        break;
-                    case R.id.drawer_coordinator:
-                        viewPager.setCurrentItem(3);
-                        break;
+            public HeaderDesign getHeaderDesign(int page) {
+                switch (page) {
+                    case 0:
+                        return HeaderDesign.fromColorResAndUrl(
+                                R.color.green,
+                                "http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/android_google_moutain_google_now_1920x1080_wallpaper_Wallpaper-HD_2560x1600_www.paperhi.com_-640x400.jpg");
+                    case 1:
+                        return HeaderDesign.fromColorResAndUrl(
+                                R.color.blue,
+                                "http://www.hdiphonewallpapers.us/phone-wallpapers/540x960-1/540x960-mobile-wallpapers-hd-2218x5ox3.jpg");
+                    case 2:
+                        return HeaderDesign.fromColorResAndUrl(
+                                R.color.cyan,
+                                "http://www.droid-life.com/wp-content/uploads/2014/10/lollipop-wallpapers10.jpg");
+                    case 3:
+                        return HeaderDesign.fromColorResAndUrl(
+                                R.color.red,
+                                "http://www.tothemobile.com/wp-content/uploads/2014/07/original.jpg");
                 }
 
-                drawerLayout.closeDrawers();
-                return true;
+                //execute others actions if needed (ex : modify your header logo)
+
+                return null;
             }
         });
-    }
 
-    static class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
+        mViewPager.getViewPager().setOffscreenPageLimit(mViewPager.getViewPager().getAdapter().getCount());
+        mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
 
-        public ViewPagerAdapter(FragmentManager manager){
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFrag(Fragment fragment, String title){
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position){
-            return mFragmentTitleList.get(position);
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        switch (id){
-            case android.R.id.home:
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                } else {
-                    drawerLayout.openDrawer(GravityCompat.START);
+        final View logo = findViewById(R.id.logo_white);
+        if (logo != null) {
+            logo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mViewPager.notifyHeaderChanged();
+                    Toast.makeText(getApplicationContext(), "Yes, the title is clickable", Toast.LENGTH_SHORT).show();
                 }
-
-                return true;
+            });
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
