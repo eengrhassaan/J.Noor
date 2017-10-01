@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg01"
-        app:viewpager_logo="@layout/header_logo"
+        app:viewpager_logo="@layout/myheader"
         app:viewpager_logoMarginTop="45dp"
         app:viewpager_headerHeight="@dimen/nav_header_height"
         app:viewpager_headerAlpha="1.0"

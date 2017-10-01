@@ -6,5 +6,5 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_header1"/>
+        android:background="@drawable/logo_jkitchen"/>
 </LinearLayout>

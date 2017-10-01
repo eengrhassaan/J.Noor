@@ -96,29 +96,26 @@
     <!--</style>-->
 
     <style name="AppTheme.Dark" parent="Theme.AppCompat.DayNight.NoActionBar">
-    <item name="colorPrimary">@color/primary</item>
-    <item name="colorPrimaryDark">@color/primary_dark</item>
-    <item name="colorAccent">@color/accent</item>
-
-    <item name="android:windowBackground">@color/primary</item>
-
-    <item name="colorControlNormal">@color/iron</item>
-    <item name="colorControlActivated">@color/white</item>
-    <item name="colorControlHighlight">@color/white</item>
-    <item name="android:textColorHint">@color/iron</item>
-
-    <item name="colorButtonNormal">@color/primary_darker</item>
-    <item name="android:colorButtonNormal">@color/primary_darker</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/shade</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/bg01</item>
+        <item name="colorControlNormal">@color/iron</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/iron</item>
+        <item name="colorButtonNormal">@color/shade</item>
+        <item name="android:colorButtonNormal">@color/shade2</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
-    <item name="colorAccent">@color/white</item>
-    <item name="android:textColorPrimary">@color/iron</item>
-    <item name="android:background">@color/primary</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/primary</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
     </style>
@@ -129,7 +126,6 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
-
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBar">false</item>
 
