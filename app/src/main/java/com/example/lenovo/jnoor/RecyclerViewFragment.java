@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 
 
@@ -32,6 +33,7 @@ public class RecyclerViewFragment extends Fragment {
     public static RecyclerViewFragment newInstance() {
         return new RecyclerViewFragment();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

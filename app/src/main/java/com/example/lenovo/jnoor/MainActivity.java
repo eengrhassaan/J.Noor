@@ -1,13 +1,12 @@
 package com.example.lenovo.jnoor;
+import android.annotation.TargetApi;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +21,7 @@ public class MainActivity extends DrawerActivity {
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,16 +33,18 @@ public class MainActivity extends DrawerActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
-
+//        mViewPager.getPagerTitleStrip().setTextColor(getApplicationContext().getColor(R.color.green));
+//        mViewPager.getPagerTitleStrip().setColor
+        mViewPager.getPagerTitleStrip().setIndicatorColor(getApplicationContext().getColor(R.color.shade));
+//        mViewPager.getViewPager().setBackground(getApplicationContext().getDrawable(R.drawable.bg01));
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
-
             @Override
             public Fragment getItem(int position) {
-                switch (position % 4) {
-                    //case 0:
-                    //    return RecyclerViewFragment.newInstance();
-                    //case 1:
-                    //    return RecyclerViewFragment.newInstance();
+                switch (position % 2) {
+                    case 0:
+                        return RecyclerViewFragment.newInstance();
+                    case 1:
+                        return RecyclerViewFragment.newInstance();
                     //case 2:
                     //    return WebViewFragment.newInstance();
                     default:
@@ -52,16 +54,17 @@ public class MainActivity extends DrawerActivity {
 
             @Override
             public int getCount() {
-                return 4;
+                return 2;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "Selection";
+//                        mViewPager.getPagerTitleStrip().setTextColor(getApplicationContext().getColor(R.color.black));
+                        return "Monthly Plan";
                     case 1:
-                        return "Actualités";
+                        return "Today's Meal";
                     case 2:
                         return "Professionnel";
                     case 3:
@@ -74,15 +77,23 @@ public class MainActivity extends DrawerActivity {
         mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
             public HeaderDesign getHeaderDesign(int page) {
+                Drawable drawable;
                 switch (page) {
                     case 0:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.green,
-                                "http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/android_google_moutain_google_now_1920x1080_wallpaper_Wallpaper-HD_2560x1600_www.paperhi.com_-640x400.jpg");
+                        //mViewPager.getPagerTitleStrip().getChildAt(1).setAlpha(0.5f);
+                        //mViewPager.getPagerTitleStrip().getChildAt(1).setAlpha(0.5f);
+                        drawable = (Drawable) getApplicationContext().getDrawable(R.drawable.background_header1);
+                        return HeaderDesign.fromColorResAndDrawable(
+                                R.color.shade2,
+                                drawable);
                     case 1:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.blue,
-                                "http://www.hdiphonewallpapers.us/phone-wallpapers/540x960-1/540x960-mobile-wallpapers-hd-2218x5ox3.jpg");
+                        drawable = (Drawable) getApplicationContext().getDrawable(R.drawable.background_header2);
+                        return HeaderDesign.fromColorResAndDrawable(
+                                R.color.shade2,
+                                drawable);
+//                        return HeaderDesign.fromColorResAndUrl(
+//                                R.color.blue,
+//                                "http://www.hdiphonewallpapers.us/phone-wallpapers/540x960-1/540x960-mobile-wallpapers-hd-2218x5ox3.jpg");
                     case 2:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.cyan,

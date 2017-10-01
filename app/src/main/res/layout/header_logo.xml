@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/logo_white"
-    android:layout_width="200dp"
-    android:layout_height="@dimen/materialviewpager_logoHeight"
-    android:fitsSystemWindows="true"
-    android:adjustViewBounds="true"
-    android:layout_centerHorizontal="true"
-    android:src="@drawable/logo_white"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name"
+    android:textSize="40dp"
+    android:textStyle="bold"
+    android:textColor="@color/shade"
 
     />
