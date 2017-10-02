@@ -1,54 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--<LinearLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--android:orientation="vertical" android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view3"
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/card_view3"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="500dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:paddingTop="5dp"-->
+            <!--card_view:cardCornerRadius="4dp"-->
+            <!--card_view:cardElevation="10dp"-->
+            <!--card_view:cardUseCompatPadding="true">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="test"/>-->
+
+
+        <!--</android.support.v7.widget.CardView>-->
+
+
+
+    <!--</ScrollView>-->
+
+<!--</LinearLayout>-->
+
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/card_view3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_marginBottom="@dimen/cardMarginVertical"-->
+        <!--android:layout_marginLeft="@dimen/cardMarginHorizontal"-->
+        <!--android:layout_marginRight="@dimen/cardMarginHorizontal"-->
+        <!--android:layout_marginTop="@dimen/cardMarginVertical"-->
+        <!--app:cardCornerRadius="2dp"-->
+        <!--app:cardElevation="2dp"-->
+        <!--app:cardPreventCornerOverlap="false"-->
+        <!--app:contentPadding="0dp">-->
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/inner_card_bg">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="test"-->
+                <!--android:id="@+id/today_tv"/>-->
+        <!--</RelativeLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal">-->
+        <!--<android.support.v7.widget.AppCompatButton-->
+            <!--android:id="@+id/btn_callus"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Call Us!"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:drawableLeft="@android:drawable/ic_menu_call"-->
+        <!--/>-->
+
+        <!--<android.support.v7.widget.AppCompatButton-->
+            <!--android:id="@+id/btn_sendsms"-->
+            <!--android:layout_toRightOf="@id/btn_callus"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="SMS"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:drawableLeft="@android:drawable/ic_dialog_email"/>-->
+
+    <!--</RelativeLayout>-->
+<!--</FrameLayout>-->
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view3"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="@dimen/cardMarginVertical"
+        android:layout_marginLeft="@dimen/cardMarginHorizontal"
+        android:layout_marginRight="@dimen/cardMarginHorizontal"
+        android:layout_marginTop="@dimen/cardMarginVertical"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="5dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardElevation="10dp"
-            card_view:cardUseCompatPadding="true">
+            android:background="@drawable/inner_card_bg">
+
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/logo_jkitchen"-->
+        <!--android:id="@+id/img1"/>-->
             <TextView
+                android:id="@+id/today_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="test"/>
+                android:paddingLeft="50dp"
+                android:text="Android version name"
+                android:textColor="@color/primary_text_default_material_light"
+                android:textSize="@dimen/abc_text_size_subhead_material"/>
+        </RelativeLayout>
 
-
-        </android.support.v7.widget.CardView>
-
-
-
-    </ScrollView>
+    </android.support.v7.widget.CardView>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="340dp">
         <android.support.v7.widget.AppCompatButton
+            android:layout_below="@id/materialViewPager"
             android:id="@+id/btn_callus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:text="Call Us!"
             android:textColor="@color/white"
+            android:background="@color/shade2"
             android:drawableLeft="@android:drawable/ic_menu_call"
-            />
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
 
         <android.support.v7.widget.AppCompatButton
+            android:background="@color/shade2"
             android:id="@+id/btn_sendsms"
             android:layout_toRightOf="@id/btn_callus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SMS"
+            android:padding="8dp"
             android:textColor="@color/white"
-            android:drawableLeft="@android:drawable/ic_dialog_email"/>
-
+            android:drawableLeft="@android:drawable/ic_dialog_email"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
     </RelativeLayout>
-</LinearLayout>
+</FrameLayout>

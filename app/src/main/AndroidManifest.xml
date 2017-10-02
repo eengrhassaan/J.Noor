@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_jkitchen"
+        android:icon="@drawable/icon_app512x512"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_jkitchen"
+        android:roundIcon="@drawable/icon_app512x512"
         android:supportsRtl="true">
         <!--Splash Screen Activity-->
         <activity

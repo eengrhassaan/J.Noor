@@ -7,6 +7,9 @@
     android:text="@string/app_name"
     android:textSize="40dp"
     android:textStyle="bold"
-    android:textColor="@color/shade"
-
+    android:textColor="@color/white"
+    android:shadowColor="#7F000000"
+    android:shadowRadius="10"
+    android:shadowDy="15"
+    android:shadowDx="5"
     />

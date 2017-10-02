@@ -5,9 +5,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
@@ -28,21 +30,21 @@ public class MainActivity extends DrawerActivity {
         setContentView(R.layout.activity_main);
         setTitle("");
         ButterKnife.bind(this);
-
         final Toolbar toolbar = mViewPager.getToolbar();
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
 //        mViewPager.getPagerTitleStrip().setTextColor(getApplicationContext().getColor(R.color.green));
 //        mViewPager.getPagerTitleStrip().setColor
-        mViewPager.getPagerTitleStrip().setIndicatorColor(getApplicationContext().getColor(R.color.shade));
+        mViewPager.getPagerTitleStrip().setIndicatorColor(ContextCompat.getColor(getApplicationContext(), R.color.shade));
 //        mViewPager.getViewPager().setBackground(getApplicationContext().getDrawable(R.drawable.bg01));
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 switch (position % 2) {
                     case 0:
-                        return RecyclerViewFragment.newInstance();
+                        return Todays_Meal.newInstance();
+
                     case 1:
                         return RecyclerViewFragment.newInstance();
                     //case 2:
@@ -62,9 +64,9 @@ public class MainActivity extends DrawerActivity {
                 switch (position % 4) {
                     case 0:
 //                        mViewPager.getPagerTitleStrip().setTextColor(getApplicationContext().getColor(R.color.black));
-                        return "Monthly Plan";
-                    case 1:
                         return "Today's Meal";
+                    case 1:
+                        return "Monthly Package";
                     case 2:
                         return "Professionnel";
                     case 3:
@@ -82,12 +84,12 @@ public class MainActivity extends DrawerActivity {
                     case 0:
                         //mViewPager.getPagerTitleStrip().getChildAt(1).setAlpha(0.5f);
                         //mViewPager.getPagerTitleStrip().getChildAt(1).setAlpha(0.5f);
-                        drawable = (Drawable) getApplicationContext().getDrawable(R.drawable.background_header1);
+                        drawable = (Drawable) getApplicationContext().getResources().getDrawable(R.drawable.background_header1);
                         return HeaderDesign.fromColorResAndDrawable(
                                 R.color.shade2,
                                 drawable);
                     case 1:
-                        drawable = (Drawable) getApplicationContext().getDrawable(R.drawable.background_header2);
+                        drawable = (Drawable) getApplicationContext().getResources().getDrawable(R.drawable.background_header2);
                         return HeaderDesign.fromColorResAndDrawable(
                                 R.color.shade2,
                                 drawable);
