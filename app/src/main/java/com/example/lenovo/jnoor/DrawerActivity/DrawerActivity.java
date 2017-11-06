@@ -1,4 +1,4 @@
-package com.example.lenovo.jnoor;
+package com.example.lenovo.jnoor.DrawerActivity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.example.lenovo.jnoor.R;
 
 /**
  * Created by florentchampigny on 27/05/2016.

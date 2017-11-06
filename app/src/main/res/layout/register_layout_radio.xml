@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <RadioGroup
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/corporate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/corporate"
+            android:buttonTint="@color/your_color"/>
+
+        <RadioButton
+            android:id="@+id/individual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/individual"
+            android:buttonTint="@color/your_color"/>
+
+        <RadioButton
+            android:id="@+id/employee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/employee"
+            android:buttonTint="@color/your_color"/>
+
+        <EditText
+            android:id="@+id/employeeCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Employee Code"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>

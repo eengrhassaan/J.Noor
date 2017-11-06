@@ -1,4 +1,4 @@
-package com.example.lenovo.jnoor;
+package com.example.lenovo.jnoor.HomeScreen;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.lenovo.jnoor.R;
 
 /**
  * Created by LENOVO on 10/1/2017.

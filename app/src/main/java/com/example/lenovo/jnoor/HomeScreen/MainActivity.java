@@ -1,4 +1,4 @@
-package com.example.lenovo.jnoor;
+package com.example.lenovo.jnoor.HomeScreen;
 import android.annotation.TargetApi;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.lenovo.jnoor.DrawerActivity.DrawerActivity;
+import com.example.lenovo.jnoor.R;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 

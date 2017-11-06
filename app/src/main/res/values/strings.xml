@@ -20,4 +20,9 @@
     <string name="expand">Expand/Collapse ActionBar</string>
     <string name="hide">Show/Hide ActionBar when scroll</string>
     <string name="paralax">ActionBar Parallax Animations</string>
+
+
+    <string name="corporate">Corporate</string>
+    <string name="individual">Individual</string>
+    <string name="employee">Employee</string>
 </resources>

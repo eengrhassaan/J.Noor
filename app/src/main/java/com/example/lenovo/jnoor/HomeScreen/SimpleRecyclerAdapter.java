@@ -1,4 +1,4 @@
-package com.example.lenovo.jnoor;
+package com.example.lenovo.jnoor.HomeScreen;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.lenovo.jnoor.R;
 
 import java.util.List;
 

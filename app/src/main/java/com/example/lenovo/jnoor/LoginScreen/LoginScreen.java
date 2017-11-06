@@ -1,4 +1,4 @@
-package com.example.lenovo.jnoor;
+package com.example.lenovo.jnoor.LoginScreen;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -12,7 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.BindViews;
+import com.example.lenovo.jnoor.HomeScreen.MainActivity;
+import com.example.lenovo.jnoor.R;
+import com.example.lenovo.jnoor.RegisterScreen.RegisterScreen;
+
 import butterknife.ButterKnife;
 import butterknife.BindView;
 

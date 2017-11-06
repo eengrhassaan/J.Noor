@@ -146,4 +146,8 @@
         <item name="color">@color/white</item>
     </style>
 
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/blue</item>
+    </style>
+
 </resources>
