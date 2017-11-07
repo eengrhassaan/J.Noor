@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <ImageView
+            android:src="@drawable/logo_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal" />
+        <RadioGroup
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="25dp"
+            >
+
+            <RadioButton
+                android:textAllCaps="true"
+                android:id="@+id/corporate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:buttonTint="@color/your_color"
+                android:text="@string/corporate"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:shadowColor="#7F000000"
+                android:shadowRadius="10"
+                android:shadowDy="15"
+                android:shadowDx="5"
+                />
+
+            <RadioButton
+                android:textAllCaps="true"
+                android:id="@+id/individual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:buttonTint="@color/your_color"
+                android:text="@string/individual"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:shadowColor="#7F000000"
+                android:shadowRadius="10"
+                android:shadowDy="15"
+                android:shadowDx="5"/>
+
+            <RadioButton
+                android:textAllCaps="true"
+                android:id="@+id/employee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:buttonTint="@color/your_color"
+                android:text="@string/employee"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:shadowColor="#7F000000"
+                android:shadowRadius="10"
+                android:shadowDy="15"
+                android:shadowDx="5"
+                android:textSize="20dp" />
+
+            <EditText
+                android:textAllCaps="true"
+                android:id="@+id/employeeCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Employee Code"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </RadioGroup>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center"
+            android:text="Next"/>
+
+
+        <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingTop="56dp"-->
+    <!--android:paddingLeft="24dp"-->
+    <!--android:paddingRight="24dp">-->
+
+    <!--&lt;!&ndash;Android Logo need to be added in android:src here in ImageView&ndash;&gt;-->
+    <!--<ImageView-->
+    <!--android:src="@drawable/logo_jkitchen"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:layout_marginBottom="24dp"-->
+    <!--android:layout_gravity="center_horizontal" />-->
+
+    <!--&lt;!&ndash; Name Label &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPersonName"-->
+    <!--android:hint="Name" />-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+    <!--&lt;!&ndash; Address Label &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_address"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPostalAddress"-->
+    <!--android:hint="Address" />-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+
+    <!--&lt;!&ndash;  Email Label &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_email"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textEmailAddress"-->
+    <!--android:hint="Email" />-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+
+    <!--&lt;!&ndash; mobile number &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_mobile"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="number"-->
+    <!--android:hint="Mobile Number" />-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+    <!--&lt;!&ndash; Password Label &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_password"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPassword"-->
+    <!--android:hint="Password"/>-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+    <!--&lt;!&ndash; Password Re-enter Label &ndash;&gt;-->
+    <!--<android.support.design.widget.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp">-->
+    <!--<EditText android:id="@+id/input_reEnterPassword"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPassword"-->
+    <!--android:hint="Re-enter Password"/>-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+    <!--&lt;!&ndash; Signup Button &ndash;&gt;-->
+    <!--<android.support.v7.widget.AppCompatButton-->
+    <!--android:id="@+id/btn_signup"-->
+    <!--android:layout_width="180dp"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_marginTop="24dp"-->
+    <!--android:layout_marginBottom="24dp"-->
+    <!--android:padding="12dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="Create Account"-->
+    <!--android:textSize="14dp"-->
+    <!--android:textColor="@color/white"/>-->
+
+        <TextView
+            android:paddingTop="20dp"
+            android:id="@+id/link_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/member_already"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18dip"/>
+    </LinearLayout>
+</ScrollView>

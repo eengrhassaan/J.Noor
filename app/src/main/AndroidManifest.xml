@@ -31,6 +31,8 @@
         <activity android:name=".LoginScreen.LoginScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait" ></activity>
         <activity android:name=".RegisterScreen.RegisterScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
         <activity android:name=".HomeScreen.MainActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
+        <activity android:name=".RegisterScreen.IndividualRegisterScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
+        <activity android:name=".RegisterScreen.CompanyRegisterScreen" android:theme="@style/AppTheme.Dark" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

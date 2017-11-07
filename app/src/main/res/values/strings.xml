@@ -25,4 +25,6 @@
     <string name="corporate">Corporate</string>
     <string name="individual">Individual</string>
     <string name="employee">Employee</string>
+
+    <string name="member_already">Already a member? Login</string>
 </resources>

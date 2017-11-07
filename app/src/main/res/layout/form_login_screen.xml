@@ -56,6 +56,7 @@
             android:layout_gravity="center"
             android:text="Login"/>
 
+
         <TextView android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -66,4 +67,5 @@
             android:textSize="18dip"/>
 
     </LinearLayout>
+
 </ScrollView>

@@ -31,7 +31,7 @@ public class LoginScreen extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen);
+        setContentView(R.layout.form_login_screen);
         //_emailText = (EditText) findViewById(R.id.input_email);
 
         ButterKnife.bind(this);
