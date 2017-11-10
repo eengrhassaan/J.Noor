@@ -3,12 +3,14 @@ package com.example.lenovo.jnoor.RegisterScreen;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -21,6 +23,13 @@ import android.widget.Toast;
 
 import com.example.lenovo.jnoor.LoginScreen.LoginScreen;
 import com.example.lenovo.jnoor.R;
+import com.example.lenovo.jnoor.WebRestApiServices.Rest_Api_Services;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
@@ -35,6 +44,12 @@ public class RegisterScreen extends AppCompatActivity {
 //    @BindView(R.id.input_password) EditText _passwordText;
 //    @BindView(R.id.input_reEnterPassword) EditText _reEnterPasswordText;
 //    @BindView(R.id.btn_signup) Button _signupButton;
+
+    //Variables
+    URL url;
+    public String TASK_CODE = "GET_E_CODE";
+    public static final String HTTP_RESPONSE = "httpResponse";
+    public String responses = "SERVER RESPONSES: ";
     @BindView(R.id.btn_next) Button _btnNext;
     @BindView(R.id.link_login) TextView _loginLink;
     EditText employeeCode;
@@ -79,18 +94,46 @@ public class RegisterScreen extends AppCompatActivity {
                     Intent i = new Intent(RegisterScreen.this,CompanyRegisterScreen.class);
                     finish();
                     startActivity(i);
+                } else if(radioGroup.getCheckedRadioButtonId() == employee.getId()){
+                    Intent i = new Intent(RegisterScreen.this,EmployeeRegisterationScreen.class);
+                    finish();
+                    startActivity(i);
                 }
             }
         });
 
-        //BroadCast Receivcer
-        BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-            }
-        };
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getApplicationContext().registerReceiver(broadcastReceiver, new IntentFilter(TASK_CODE));
+    }
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        getApplicationContext().unregisterReceiver(broadcastReceiver);
+    }
+
+    //BroadCast Receivcer
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String response = intent.getStringExtra(HTTP_RESPONSE);
+            Log.d(responses,"\n" + response.toString());
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                Log.d("RESULT =", jsonObject.getString("status"));
+                Toast.makeText(getApplicationContext(),"Here is: " + jsonObject.getString("status"),Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            System.out.print("\nHere\n");
+        }
+    };
+    //On Edit Text Value Change
     private void edittextOnValueChangeListener() {
         TextWatcher textwatcher = new TextWatcher() {
             @Override
@@ -100,12 +143,14 @@ public class RegisterScreen extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                TASK_CODE="GET_E_CODE";
                 Toast.makeText(getApplicationContext(),employeeCode.getText().toString(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                Rest_Api_Services rest_api_services = new Rest_Api_Services(getApplicationContext(),TASK_CODE);
+                rest_api_services.execute("http://192.168.0.111:82/testrest/api/example/test");
             }
         };
 

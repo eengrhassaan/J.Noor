@@ -25,6 +25,8 @@
   <color name="shade2">#98795f</color>
   <color name="shade">#534d44</color>
 
+  <color name="backgroundColor_splashscreen">#3d1f3b</color>
+
   <color name="primaryColor1">#2196F3</color>
   <color name="primaryColorDark1">#1976D2</color>
   <color name="colorAccent1">#FF4081</color>

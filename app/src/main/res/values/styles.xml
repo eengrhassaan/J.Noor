@@ -100,7 +100,9 @@
         <item name="colorPrimaryDark">@color/shade</item>
         <item name="colorAccent">@color/accent</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowBackground">@drawable/bg01</item>
+        <!--<item name="android:windowBackground">@drawable/bg01</item>-->
+        <item name="android:windowBackground">@color/backgroundColor_splashscreen</item>
+        <!--<item name="android:windowBackground">@drawable/splashscreen_bg_2</item>-->
         <item name="colorControlNormal">@color/iron</item>
         <item name="colorControlActivated">@color/white</item>
         <item name="colorControlHighlight">@color/white</item>

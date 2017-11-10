@@ -16,24 +16,24 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by LENOVO on 11/7/2017.
+ * Created by LENOVO on 11/8/2017.
  */
 
-public class CompanyRegisterScreen extends AppCompatActivity {
-    @BindView(R.id.link_company_login) TextView _linklogin;
-    @BindView(R.id.btn_company_signup) Button _signup_company;
+public class EmployeeRegisterationScreen extends AppCompatActivity {
+    @BindView(R.id.link_employee_login) TextView _login_employee;
+    @BindView(R.id.btn_employee_signup) Button _signup_employee;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_coorporate);
+        setContentView(R.layout.form_employee);
         ButterKnife.bind(this);
         this.getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
-        _linklogin.setOnClickListener(new View.OnClickListener() {
+        _login_employee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CompanyRegisterScreen.this, LoginScreen.class);
+                Intent i = new Intent(EmployeeRegisterationScreen.this, LoginScreen.class);
                 finish();
                 startActivity(i);
             }
